@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import SpringDemo from './components/springDemo';
+import Scrolling from './components/Scrolling';
 import './App.css';
+import { Switch, Route, NavLink } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <NavLink to="/scroll" activeClassName="scroll">
+        scroll
+      </NavLink>
+      <br></br>
+      <NavLink to="/fade-in" activeClassName="fade-in">
+        fade in
+      </NavLink>
+      <br></br>
+      <NavLink to="/" activeClassName="home">
+        home
+      </NavLink>
+    
       </header>
+
+      <main className="App-main">
+        <Switch>
+          <Route path="/scroll">
+            <Scrolling />
+          </Route>
+
+          <Route path="/fade-in">
+            <SpringDemo />
+          </Route>
+        </Switch>
+      </main>
     </div>
   );
 }
