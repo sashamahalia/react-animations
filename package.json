@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-spring": "^9.2.3"
+    "react-spring": "^9.2.3",
+    "react-use-measure": "^2.0.4"
   }
 }
