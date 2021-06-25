@@ -1,5 +1,6 @@
 import SpringDemo from './components/springDemo';
 import Scrolling from './components/Scrolling';
+import Fill from './components/Fill';
 import './App.css';
 import { Switch, Route, NavLink } from "react-router-dom";
 
@@ -17,6 +18,10 @@ function App() {
         fade in
       </NavLink>
       <br></br>
+      <NavLink to="/Fill" activeClassName="Fill">
+        fill
+      </NavLink>
+      <br></br>
       <NavLink to="/" activeClassName="home">
         home
       </NavLink>
@@ -31,6 +36,10 @@ function App() {
 
           <Route path="/fade-in">
             <SpringDemo />
+          </Route>
+
+          <Route path="/fill">
+            <Fill />
           </Route>
         </Switch>
       </main>
