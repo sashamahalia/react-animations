@@ -5,12 +5,16 @@ import { useSpring, animated } from "@react-spring/web";
 import styles from '../styles.module.css';
 
 export default function Fill () {
-  const [open, toggle] = useState(false);
   const [ref, { width } ] = useMeasure();
-  const props = useSpring({ width: open ? width : 0});
+  const [open, toggle] = useState(false);
+  // const actions = {
+  //   LtoR: { width : open ? width : 0 },
+  //   TtoB: { height : open ? height : 0 },
+  // }
+  let props = useSpring({ width : open ? width : 0 });
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
       <div ref={ref} className={styles.main} onClick={() => toggle(!open)}>
       <animated.div className={styles.fill} style={props} />
       <animated.div className={styles.content}>{props.width.to(x => x.toFixed(0))}</animated.div>
